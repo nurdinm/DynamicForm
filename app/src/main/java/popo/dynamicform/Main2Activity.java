@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -55,6 +56,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -87,12 +89,12 @@ import java.util.HashMap;
 import static popo.dynamicform.PaintView.DEFAULT_COLOR;
 
 
-public class Main2Activity extends AppCompatActivity {
-    final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 99;
+public class Main2Activity extends AppCompatActivity implements View.OnClickListener{
+
     private ArrayList<FingerPath> paths = new ArrayList<>();
     PDFView pdfView;
-    LinearLayout root;
-    Button btnDownload;
+
+
     String uri;
     ProgressDialog pDialog;
     String tes;
@@ -100,33 +102,12 @@ public class Main2Activity extends AppCompatActivity {
     private BoomMenuButton bmb;
     CardView _viewcard;
 
-    private int pageIndex;
-    private PdfRenderer pdfRenderer;
-    private PdfRenderer.Page currentPage;
-    private ParcelFileDescriptor parcelFileDescriptor;
-    private static final String FILENAME = Environment.getExternalStorageDirectory().toString().concat("/")+DirectoryHelper.ROOT_DIRECTORY_NAME.concat("/")+"downloadfile.pdf";
-    private ImageView imageViewPdf;
-    private PaintView paintView;
+
     Toolbar toolbar;
     private FrameLayout frameLayout;
 
-    PointF start = new PointF();
-    PointF mid = new PointF();
-    float oldDist = 1f;
-    float newDist;
-    float distanceOffset = 50f;
-    float minOffset = 50f;
-    float maxOffset = 10000f;
-    private boolean falg = true;
-    private int startval = 0;
-
-    Matrix matrix = new Matrix();
-    Matrix savedMatrix = new Matrix();
-    Matrix savedMatrix2 = new Matrix();
-
     static final int NONE = 0;
     static final int DRAG = 1;
-    static final int POINT2 = 2;
     static final int ZOOM = 3;
     int mode = NONE;
     private Paint mPaint;
@@ -139,27 +120,40 @@ public class Main2Activity extends AppCompatActivity {
     private float mX, mY;
     private static final float TOUCH_TOLERANCE = 4;
     private int currentColor;
-    private float startX;
-    private float startY;
-    private float endX;
-    private float endY;
-    LinearLayout mDrawingPad;
-    Path path = new Path();
-    private static final String TAG = "Touch";
     ScaleGestureDetector mScaleDetector;
     float mScaleFactor = 1f;
-    float scalePointX = 0f;
-    float scalePointY = 0f;
     private boolean editMode = false;
     private boolean moveMode = false;
-    private float currentXOffset = 0;
-    private float currentYOffset = 0;
+    private boolean scrollMode = true;
     Rect mRect;
-    @SuppressWarnings("unused")
+
     private static float MIN_ZOOM = 1f;
     private static float MAX_ZOOM = 2f;
 
     String active = "no";
+
+    private float scaleFactor = 1.f;
+
+    //These two variables keep track of the X and Y coordinate of the finger when it first
+    //touches the screen
+    private float startX = 0f;
+    private float startY = 0f;
+
+    //These two variables keep track of the amount we need to translate the canvas along the X
+    //and the Y coordinate
+    private float translateX = 0f;
+    private float translateY = 0f;
+
+    //These two variables keep track of the amount we translated the X and Y coordinates, the last time we
+    //panned.
+    private float previousTranslateX = 0f;
+    private float previousTranslateY = 0f;
+
+    private boolean dragged = true;
+
+    private CustomScrollView myScrollView;
+    Button btnEdit,btnZoom,btnAlign;
+
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -187,6 +181,14 @@ public class Main2Activity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         frameLayout = findViewById(R.id.remote_pdf_root);
+        btnEdit = findViewById(R.id.btn_edit);
+        btnAlign = findViewById(R.id.btn_align);
+        btnZoom = findViewById(R.id.btn_zoom);
+
+        btnZoom.setOnClickListener(this);
+        btnEdit.setOnClickListener(this);
+        btnAlign.setOnClickListener(this);
+        btnAlign.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_vertical_align_center_24dp));
         setSupportActionBar(toolbar);
 
         bmb.setPiecePlaceEnum(PiecePlaceEnum.HAM_2);
@@ -224,11 +226,12 @@ public class Main2Activity extends AppCompatActivity {
 
         _viewcard.setVisibility(View.GONE);
         pdfView = findViewById(R.id.pdfView);
+        myScrollView = (CustomScrollView) findViewById(R.id.myScroll);
+        myScrollView.setFillViewport(true);
 //        paintView = (PaintView) findViewById(R.id.paintView);
 //        paintView.setVisibility(View.GONE);
 
-        paintView = new PaintView(this);
-
+//        paintView = new PaintView(this);
 
         DirectoryHelper.createDirectory(this);
         pdfFolder = Environment.getExternalStorageDirectory();
@@ -244,19 +247,37 @@ public class Main2Activity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
 //        paintView.init(displayMetrics);
 
-        int height = metrics.heightPixels;
-        int width = metrics.widthPixels;
-        mBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-        mCanvas = new Canvas(mBitmap);
+//        int height = metrics.heightPixels;
+//        int width = metrics.widthPixels;
+//        mBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+//        mCanvas = new Canvas(mBitmap);
+
+        int h = 1;
+        int w = 1;
+        myScrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                if(myScrollView.getWidth()>0) {
+                    int h = myScrollView.getChildAt(0).getHeight();
+                    int w = myScrollView.getWidth();
+                    mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+                    mCanvas = new Canvas(mBitmap);
+                    Log.e("THI1S", String.valueOf(h));
+                    Log.e("THIS1", String.valueOf(w));
+                }
+            }
+        });
+
+        Log.e("THIS", String.valueOf(h));
+        Log.e("THIS", String.valueOf(w));
+
         currentColor = DEFAULT_COLOR;
-
-
 
         pdfView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent event) {
                 if (editMode){
-
+                    myScrollView.setEnableScrolling(false);
                     Log.e("TES", String.valueOf(mScaleFactor));
                     Log.e("TOUCH","RECT TOP :" + mRect.top + " RECT LEFT : " + mRect.left + " RECT RIGHT : " + mRect.right + " RECT BOTTOM :" + mRect.bottom);
 
@@ -303,13 +324,85 @@ public class Main2Activity extends AppCompatActivity {
                 }
 
                 if(moveMode){
-                    mRect.top = 0;
+                    myScrollView.setEnableScrolling(false);
+//                    mRect.top = 0;
+//                    mScaleDetector.onTouchEvent(event);
+//                    Log.e("TES", String.valueOf(mScaleFactor));
+//                    Log.e("TOUCH","RECT TOP :" + mRect.top + " RECT LEFT : " + mRect.left + " RECT RIGHT : " + mRect.right + " RECT BOTTOM :" + mRect.bottom);
+//
+//
+//                    view.invalidate();
+//                    return true;
+
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
+
+                        case MotionEvent.ACTION_DOWN:
+                            mode = DRAG;
+
+                            //We assign the current X and Y coordinate of the finger to startX and startY minus the previously translated
+                            //amount for each coordinates This works even when we are translating the first time because the initial
+                            //values for these two variables is zero.
+                            startX = event.getX() - previousTranslateX;
+                            startY = event.getY() - previousTranslateY;
+                            break;
+
+                        case MotionEvent.ACTION_MOVE:
+                            translateX = event.getX() - startX;
+                            translateY = event.getY() - startY;
+
+                            //We cannot use startX and startY directly because we have adjusted their values using the previous translation values.
+                            //This is why we need to add those values to startX and startY so that we can get the actual coordinates of the finger.
+                            double distance = Math.sqrt(Math.pow(event.getX() - (startX + previousTranslateX), 2) +
+                                    Math.pow(event.getY() - (startY + previousTranslateY), 2)
+                            );
+
+                            if(distance > 0) {
+                                dragged = true;
+                            }
+
+                            break;
+
+                        case MotionEvent.ACTION_POINTER_DOWN:
+                            mode = ZOOM;
+                            break;
+
+                        case MotionEvent.ACTION_UP:
+                            mode = NONE;
+                            dragged = false;
+
+                            //All fingers went up, so let's save the value of translateX and translateY into previousTranslateX and
+                            //previousTranslate
+                            previousTranslateX = translateX;
+                            previousTranslateY = translateY;
+                            break;
+
+                        case MotionEvent.ACTION_POINTER_UP:
+                            mode = DRAG;
+
+                            //This is not strictly necessary; we save the value of translateX and translateY into previousTranslateX
+                            //and previousTranslateY when the second finger goes up
+                            previousTranslateX = translateX;
+                            previousTranslateY = translateY;
+                            break;
+                    }
+
                     mScaleDetector.onTouchEvent(event);
-                    Log.e("TES", String.valueOf(mScaleFactor));
-                    Log.e("TOUCH","RECT TOP :" + mRect.top + " RECT LEFT : " + mRect.left + " RECT RIGHT : " + mRect.right + " RECT BOTTOM :" + mRect.bottom);
 
+                    //We redraw the canvas only in the following cases:
+                    //
+                    // o The mode is ZOOM
+                    //        OR
+                    // o The mode is DRAG and the scale factor is not equal to 1 (meaning we have zoomed) and dragged is
+                    //   set to true (meaning the finger has actually moved)
+                    if ((mode == DRAG && scaleFactor != 1f && dragged) || mode == ZOOM) {
+                        pdfView.invalidate();
+                    }
 
-                    view.invalidate();
+                    return true;
+                }
+
+                if(scrollMode){
+                    myScrollView.setEnableScrolling(true);
                     return true;
                 }
                 return false;
@@ -378,13 +471,39 @@ public class Main2Activity extends AppCompatActivity {
                 this.setMoveableMode(true);
                 return true;
             case R.id.clear:
-                this.setEditMode(false);
-                this.setMoveableMode(false);
-//                new SaveFileImage().execute(Main2Activity.this);
+//                this.setEditMode(false);
+//                this.setMoveableMode(false);
+                new SaveFileImage().execute(myScrollView);
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view.getId() == R.id.btn_edit){
+            this.setEditMode(true);
+            this.setMoveableMode(false);
+            this.setScrollMode(false);
+            btnEdit.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_edit_24dp));
+            btnAlign.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_vertical_align_center_non_24dp));
+            btnZoom.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_zoom_out_map_non_24dp));
+        }else if(view.getId() == R.id.btn_align){
+            this.setEditMode(false);
+            this.setMoveableMode(false);
+            this.setScrollMode(true);
+            btnEdit.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_edit_non_24dp));
+            btnAlign.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_vertical_align_center_24dp));
+            btnZoom.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_zoom_out_map_non_24dp));
+        }else if(view.getId() == R.id.btn_zoom){
+            this.setEditMode(false);
+            this.setMoveableMode(true);
+            this.setScrollMode(false);
+            btnEdit.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_edit_non_24dp));
+            btnAlign.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_vertical_align_center_non_24dp));
+            btnZoom.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_zoom_out_map_24dp));
+        }
     }
 
     private class LoadData extends AsyncTask<String,String,String>{
@@ -487,13 +606,14 @@ public class Main2Activity extends AppCompatActivity {
                                 canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));
                                 canvas.save();
 
-                                if(mScaleDetector.isInProgress()) {
-                                    pdfView.setScaleX(mScaleFactor);
-                                    pdfView.setScaleY(mScaleFactor);
-
-                                } else
-                                    pdfView.setScaleX(mScaleFactor);
-                                    pdfView.setScaleY(mScaleFactor);
+//                                if(mScaleDetector.isInProgress()) {
+//                                    pdfView.setScaleX(mScaleFactor);
+//                                    pdfView.setScaleY(mScaleFactor);
+//
+//                                } else
+//                                    pdfView.setScaleX(mScaleFactor);
+//                                    pdfView.setScaleY(mScaleFactor);
+                                    pdfView.animate().scaleX(mScaleFactor).scaleY(mScaleFactor).setDuration(100).start();
                                 pdfView.enableDoubletap(true);
                                 Log.e("TES x : ", String.valueOf(mScaleDetector.getFocusX()));
 
@@ -501,6 +621,8 @@ public class Main2Activity extends AppCompatActivity {
 
                                 canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
                                 canvas.restore();
+                            }
+                            if(scrollMode){
                             }
                         }
                     })
@@ -521,7 +643,7 @@ public class Main2Activity extends AppCompatActivity {
                     .scrollHandle(null)
                     .enableAntialiasing(true) // improve rendering a little bit on low-res screens
                     // spacing between pages in dp. To define spacing color, set view background
-                    .spacing(0)
+                    .spacing(20)
                     .load();
             pDialog.dismiss();
 
@@ -540,14 +662,50 @@ public class Main2Activity extends AppCompatActivity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
-        int height = metrics.heightPixels;
+        int height = myScrollView.getChildAt(0).getHeight();
         int width = metrics.widthPixels;
 
-        Bitmap b = Bitmap.createBitmap(b1, 0, 0, width, height);
+        Bitmap b = Bitmap.createBitmap(b1, width, height, 0, 0);
         Log.e("Screenshot", String.valueOf(statusBarHeight));
         view.destroyDrawingCache();
         Log.e("Screenshot", "taken successfully");
         return b;
+
+    }
+
+    public Bitmap saveBitmap2(CustomScrollView customScrollView) {
+        int h = 0;
+        Bitmap bitmap = null;
+        //get the actual height of scrollview
+        for (int i = 0; i < customScrollView.getChildCount(); i++) {
+            h += customScrollView.getChildAt(i).getHeight();
+            customScrollView.getChildAt(i).setBackgroundResource(R.color.color_white);
+        }
+        // create bitmap with target size
+        bitmap = Bitmap.createBitmap(customScrollView.getWidth(), h,
+                Bitmap.Config.ARGB_8888);
+
+        final Canvas canvas = new Canvas(bitmap);
+        customScrollView.draw(canvas);
+        FileOutputStream out = null;
+        try {
+            out = new FileOutputStream(Environment.getExternalStorageDirectory().toString().concat("/")
+                    + DirectoryHelper.ROOT_DIRECTORY_NAME.concat("/")
+                    + "/screenshot.jpg");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            if (null != out) {
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+                getResizedBitmap(bitmap,500);
+                out.flush();
+                out.close();
+            }
+        } catch (IOException e) {
+
+        }
+        return bitmap;
 
     }
 
@@ -572,12 +730,27 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-    private class SaveFileImage extends AsyncTask<Activity,String,String>{
+    public Bitmap getResizedBitmap(Bitmap image, int maxSize) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        float bitmapRatio = (float)width / (float) height;
+        if (bitmapRatio > 1) {
+            width = maxSize;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxSize;
+            width = (int) (height * bitmapRatio);
+        }
+        return Bitmap.createScaledBitmap(image, width, height, true);
+    }
+
+    private class SaveFileImage extends AsyncTask<CustomScrollView,String,String>{
         @Override
-        protected String doInBackground(Activity... activities) {
+        protected String doInBackground(CustomScrollView... activities) {
             try {
-                Bitmap bitmap = takeScreenShot(activities[0]);
-                saveBitmap(bitmap);
+//                Bitmap bitmap = takeScreenShot(activities[0]);
+                saveBitmap2(activities[0]);
             }catch (Exception e){
                 Log.e("ERROR2",e.getMessage());
             }
@@ -602,8 +775,8 @@ public class Main2Activity extends AppCompatActivity {
             System.out.println(s);
 
             pDialog.dismiss();
-            Intent intent = new Intent(Main2Activity.this,PdfToImageView.class);
-            startActivity(intent);
+//            Intent intent = new Intent(Main2Activity.this,PdfToImageView.class);
+//            startActivity(intent);
 
         }
     }
@@ -660,6 +833,14 @@ public class Main2Activity extends AppCompatActivity {
      */
     public void setMoveableMode(boolean moveMode) {
         this.moveMode = moveMode;
+    }
+
+    public boolean isScrollMode() {
+        return scrollMode;
+    }
+
+    public void setScrollMode(boolean scrollMode) {
+        this.scrollMode = scrollMode;
     }
 }
 

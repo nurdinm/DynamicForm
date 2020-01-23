@@ -51,23 +51,8 @@
 
     </androidx.cardview.widget.CardView>
 
-    <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/pdfView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-<!--        <popo.dynamicform.PaintView-->
-<!--            android:id="@+id/paintView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical" />-->
-
-    </com.github.barteksc.pdfviewer.PDFView>
-
-
-
-
-<!--    <WebView-->
+    <!--    <WebView-->
 <!--        android:id="@+id/web"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent"-->
@@ -86,4 +71,56 @@
         app:bmb_buttonEnum="ham"
         app:bmb_buttonPlaceEnum="buttonPlace_ham_4"
         app:bmb_piecePlaceEnum="piecePlace_ham_4" />
+
+    <popo.dynamicform.CustomScrollView
+        android:id="@+id/myScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfView"
+                android:layout_width="match_parent"
+                android:layout_height="1200dp"
+                android:background="#5a88ca">
+
+                <!--        <popo.dynamicform.PaintView-->
+                <!--            android:id="@+id/paintView"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="match_parent"-->
+                <!--            android:orientation="vertical" />-->
+
+            </com.github.barteksc.pdfviewer.PDFView>
+
+
+    </popo.dynamicform.CustomScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:padding="8dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_edit_selector"/>
+        <Button
+            android:id="@+id/btn_zoom"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_zoom_selector"/>
+        <Button
+            android:id="@+id/btn_align"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_align_selector"/>
+    </LinearLayout>
 </FrameLayout>
