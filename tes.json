@@ -1,0 +1,253 @@
+[
+  {
+    "section": "descriptionData",
+    "title": "PAUD",
+    "description": "Sekolah.mu adalah kawan anak bermain serta belajar menyenangkan. Melalui ragam kelas, anak bisa meningkatkan kemampuan numerasi, literasi, motorik, sosial-emosional, serta pengembangan dirinya.",
+    "packageLink": "https://bayar.sekolah.mu/paket/sekolahmu/trial-gratis-paud?utm_source=sekolahmu&utm_medium=jenjang-paud-headline",
+    "sectionImage": "https://cdn.sekolah.mu/assets/detail-year-level/paud/description_img.png",
+    "sectionBg": "https://cdn.sekolah.mu/assets/detail-year-level/banner_paud.png",
+    "sectionBgMobile": "https://cdn.sekolah.mu/assets/detail-year-level/banner_paud_mobile.png"
+  },
+  {
+    "section": "learningMethodData",
+    "title": "Bagaimana Metode Belajar di Sekolah.mu?",
+    "subtitle": "Sekolah.mu adalah platform belajar masa depan yang menggunakan metode blended learning dengan mengkombinasikan variasi metode belajar untuk memfasilitasi kebutuhan gaya dan cara belajar setiap anak yang berbeda.",
+    "methods": [
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/lm_icon_1.svg",
+        "name": "Pembelajaran Terjadwal",
+        "list": ["Pertemuan online 3-5x seminggu", "Konsultasi rutin via chat"]
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/lm_icon_2.svg",
+        "name": "Pembelajaran Mandiri",
+        "list": ["Video dan Infografis", "Game interaktif", "Praktik dan Eksperimen", "Kuis dan Asesmen"]
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/lm_icon_3.svg",
+        "name": "Hasil Pembelajaran",
+        "list": ["Proyek belajar", "Feedback", "Portofolio karya", "Rapor dan Sertifkat"]
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/lm_icon_4.svg",
+        "name": "Dukungan Pembelajaran",
+        "list": ["Playkit"]
+      }
+    ]
+  },
+  {
+    "section": "packageFavData",
+    "title": "Paket Kelas Favorit",
+    "subtitle": "Kembangkan potensi anak sejak dini secara menyenangkan 3 hingga 5 kali seminggu bersama kelas belajar live Sekolah.mu dengan 200+ konten pembelajaran.",
+    "sectionImage": "https://cdn.sekolah.mu/assets/detail-year-level/paud/package_fav_img.png",
+    "sectionList": [
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/package_fav_icon_1.svg",
+        "text": "Video belajar menarik"
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/package_fav_icon_2.svg",
+        "text": "Proyek belajar seru"
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/package_fav_icon_3.svg",
+        "text": "Akses materi fleksibel"
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/package_fav_icon_4.svg",
+        "text": "Modul belajar interaktif"
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/package_fav_icon_5.svg",
+        "text": "Permainan edukatif"
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/package_fav_icon_6.svg",
+        "text": "Teman belajar dari seluruh Indonesia"
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/package_fav_icon_7.svg",
+        "text": "Guru berpengalaman dan ahli"
+      },
+      {
+        "icon": "https://cdn.sekolah.mu/assets/detail-year-level/package_fav_icon_8.svg",
+        "text": "Sertifikat, rapor, dan portofolio"
+      }
+    ]
+  },
+  {
+    "section": "bannerData",
+    "title": "Dapatkan Promo Menarik Sekarang!"
+  },
+  {
+    "section": "packageSelectionData",
+    "title": "Pilihan Paket Kelas",
+    "loadMoreLink": "https://bayar.sekolah.mu/paket/sekolahmu/paket-kelas-paud?utm_source=sekolahmu&utm_medium=jenjang-paud-lihat-kelas",
+    "packageList": [
+      {
+        "name": "Living Qur'an PAUD",
+        "image": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "originalPrice": 2250000,
+        "discountedPrice": 787500,
+        "packageLink": "https://bayar.sekolah.mu/paket/sekolahmu/paket-kelas-paud/kelas-living-quran?utm_source=sekolahmu&utm_medium=jenjang-paud-favorit",
+        "curriculumLink": "https://drive.google.com/file/d/1YWQ3SdCZ2aPMFm8OeH1a77mUKhLdx2__/view?usp=sharing"
+      },
+      {
+        "name": "Cambridge English Class PAUD",
+        "image": "https://cdn.sekolah.mu/upload/db337e56af1c4ca29cc6b83008286f67.png",
+        "originalPrice": 2250000,
+        "discountedPrice": 787500,
+        "packageLink": "https://bayar.sekolah.mu/paket/sekolahmu/paket-kelas-paud/bahasa-inggris?utm_source=sekolahmu&utm_medium=jenjang-paud-favorit",
+        "curriculumLink": "https://drive.google.com/file/d/1YEPXRBJEis6LSY5pfUW-6NK2rcapAvkK/view?usp=sharing"
+      },
+      {
+        "name": "Literasi Numerasi PAUD",
+        "image": "https://cdn.sekolah.mu/upload/24e16edbec9440139a188c21ebf87882.png",
+        "originalPrice": 2000000,
+        "discountedPrice": 700000,
+        "packageLink": "https://bayar.sekolah.mu/paket/sekolahmu/paket-kelas-paud/literasi-numerasi?utm_source=sekolahmu&utm_medium=jenjang-paud-favorit",
+        "curriculumLink": "https://drive.google.com/file/d/1ZIqkOT0twlyG9VTET65COiJjjFImluhd/view?usp=sharing"
+      }
+    ]
+  },
+  {
+    "section": "liveLearningData",
+    "title": "Jadwal Belajar Live",
+    "sectionImage": "https://cdn.sekolah.mu/assets/detail-year-level/paud/live_learn_img.png",
+    "notes": [
+      "Lihat pilihan jadwal lainnya di https://info.sekolah.mu/kurikulumPAUD"
+    ],
+    "schedules": [
+      {
+        "className": "Living Qur'an PAUD",
+        "schedule": "Senin & Kamis <br> 16.00 - 17.00 WIB"
+      },
+      {
+        "className": "Cambridge English Class PAUD",
+        "schedule": "Senin & Rabu/Selasa & Kamis <br> 14.00 - 15.00 WIB"
+      },
+      {
+        "className": "Literasi Numerasi PAUD",
+        "schedule": "Senin, Rabu, Jumat <br> 15.00 - 16.00 WIB"
+      },
+      {
+        "className": "Kreativitas Motorik PAUD",
+        "schedule": "Selasa, Kamis, Jumat <br> 15.00 - 16.00 WIB"
+      },
+      {
+        "className": "Paket Lengkap PAUD",
+        "schedule": "Senin - Jumat <br> 15.00 - 16.00 WIB"
+      }
+    ]
+  },
+  {
+    "section": "liveLearningV2Data",
+    "title": "Jadwal Belajar Live",
+    "time": ["08 .00 - 09.00 WIB", "09.00 - 10.00 WIB", "10 .00 - 11.00 WIB", "11 .00 - 12.00 WIB", "14 .00 - 15.00 WIB", "15 .00 - 16.00 WIB", "16 .00 - 17.00 WIB"],
+    "learningPackage": [
+      {
+        "name": "Cambridge English",
+        "schedule": [
+          { "dayName": "Senin", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Selasa", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Rabu", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Kamis", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Jumat", "class": ["-", "-", "-", "-", "-", "-", "-"] }
+        ]
+      },
+      {
+        "name": "Literasi Numerasi",
+        "schedule": [
+          { "dayName": "Senin", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Selasa", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Rabu", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Kamis", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Jumat", "class": ["-", "-", "-", "-", "-", "-", "-"] }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "studentWorkData",
+    "title": "Kegiatan dan Karya Murid",
+    "images": [
+      "https://cdn.sekolah.mu/assets/detail-year-level/paud/sw_img_1.png",
+      "https://cdn.sekolah.mu/assets/detail-year-level/paud/sw_img_2.png",
+      "https://cdn.sekolah.mu/assets/detail-year-level/paud/sw_img_3.png",
+      "https://cdn.sekolah.mu/assets/detail-year-level/paud/sw_img_4.png",
+      "https://cdn.sekolah.mu/assets/detail-year-level/paud/sw_img_5.png"
+    ]
+  },
+  {
+    "section": "faqData",
+    "title": "FAQ (Tanya Jawab)",
+    "sectionImage": "https://cdn.sekolah.mu/assets/detail-year-level/paud/faq_img.png",
+    "questions": [
+      {
+        "question": "Berapa lama durasi paket kelas akan berjalan?",
+        "answer": "Durasi keseluruhan kelas dari tiap paket adalah 3 bulan dan 6 bulan, tergantung paket yang dibeli.",
+        "key": "_1"
+      },
+      {
+        "question": "Apa saja opsi metode pembayaran yang tersedia?",
+        "answer": "Terdapat 2 opsi metode pembayaran yakni pembayaran penuh dan cicilan. <br> <br> Metode cicilan dibagi menjadi 3 kali pembayaran: pembayaran di awal sebelum ikut kelas, pembayaran pada bulan kedua, dan pembayaran pada bulan ketiga. Pembayaran kedua dan ketiga jatuh tempo tanggal 10 pada bulan berikutnya setelah cicilan sebelumnya dibayar. ",
+        "key": "_2"
+      },
+      {
+        "question": "Apa media yang digunakan saat Belajar Live? Kapan saja jadwal Belajar Live diadakan?",
+        "answer": "Belajar Live akan menggunakan aplikasi Zoom dan memungkinkan adanya interaksi antara 2 arah dengan fasilitator dan anak-anak lainnya. Jadwal Belajar Live berbeda-beda sesuai dengan jenjang dan paket yang dimiliki.",
+        "key": "_3"
+      },
+      {
+        "question": "Apa perbedaan paket kelas Literasi Numerasi dan Kreativitas Motorik?",
+        "answer": "Paket kelas Literasi dan Numerasi ditujukan untuk mengasah kemampuan anak dalam membaca, menulis dan berhitung. Sedangkan paket kelas Kreativitas Motorik ditujukan untuk meningkatkan kreativitas dan menstimulasi keterampilan motorik anak.",
+        "key": "_4"
+      },
+      {
+        "question": "Saya sudah coba daftar, tapi tidak bisa. Apa yang harus saya lakukan?",
+        "answer": "Pastikan umur di akun terdaftar sudah sesuai dengan kategori jenjang/usia kelas yang dipilih.",
+        "key": "_5"
+      },
+      {
+        "question": "Anak saya sudah TK, tapi yang ada hanya jenjang PAUD. Apa yang harus saya lakukan?",
+        "answer": "PAUD adalah jenjang yang mencakup KB dan TK. Secara umum, jenjang usia anak PAUD dibagi menjadi PAUD KB 3-4 tahun, PAUD A 4-5 tahun, dan PAUD B 5-6 tahun.",
+        "key": "_6"
+      },
+      {
+        "question": "Apakah harga paket kelas sudah termasuk dengan playkit?",
+        "answer": "Harga paket kelas belum termasuk playkit dan untuk saat ini belum ada paket kelas yang menyediakan playkit. Apabila ada alat bahan yang diperlukan untuk praktik pembelajaran, nantinya akan diinformasikan di aktivitas kelas dan dapat disediakan secara mandiri dengan alat-alat yang ada di rumah.",
+        "key": "_7"
+      },
+      {
+        "question": "Bagaimana jika saya ingin tahu lebih banyak tentang Paket Kelas Sekolah.mu?",
+        "answer": "Untuk info lebih lanjut, Ayah Bunda dapat menghubungi layanan pelanggan Sekolah.mu di nomor +6281388111756 atau klik <a href=\"https://wa.me/6281388111756?text=Halo! Saya ingin tahu lebih lanjut tentang Sekolah.mu\" target=\"_blank\">di sini</a>",
+        "key": "_8"
+      }
+    ]
+  },
+  {
+    "section": "otherCategoryData",
+    "title": "Kategori Jenjang Lainnya",
+    "subtitle": "",
+    "categories": [
+      {
+        "name": "SD",
+        "headline": "Sekolah.mu membantu anak memahami konsep dasar secara mendalam. Kelas dirancang agar anak bisa belajar dengan menyenangkan.",
+        "imageBg": "https://cdn.sekolah.mu/assets/detail-year-level/category_img_sd.png",
+        "route": "/sd?utm_source=sekolahmu&utm_medium=jenjang-paud-kategori"
+      },
+      {
+        "name": "SMP",
+        "headline": "Sekolah.mu memberikan solusi pembelajaran anak. Dapatkan dukungan pembelajaran yang lengkap di sini.",
+        "imageBg": "https://cdn.sekolah.mu/assets/detail-year-level/category_img_smp.png",
+        "route": "/smp?utm_source=sekolahmu&utm_medium=jenjang-paud-kategori"
+      },
+      {
+        "name": "SMA/K",
+        "headline": "Sekolah.mu hadir untuk mempersiapkan anak menuju jenjang selanjutnya. Maksimalkan seluruh potensi anak di sini.",
+        "imageBg": "https://cdn.sekolah.mu/assets/detail-year-level/category_img_sma.png",
+        "route": "/sma-dan-smk?utm_source=sekolahmu&utm_medium=jenjang-paud-kategori"
+      }
+    ]
+  }
+]
