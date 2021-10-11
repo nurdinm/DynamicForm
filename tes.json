@@ -158,7 +158,7 @@
       {
         "name": "Literasi Numerasi",
         "schedule": [
-          { "dayName": "Senin", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Senin", "class": ["-", "Tes Opsi 1", "-", "-", "-", "-", "-"] },
           { "dayName": "Selasa", "class": ["-", "-", "-", "-", "-", "-", "-"] },
           { "dayName": "Rabu", "class": ["-", "-", "-", "-", "-", "-", "-"] },
           { "dayName": "Kamis", "class": ["-", "-", "-", "-", "-", "-", "-"] },
