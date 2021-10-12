@@ -156,9 +156,29 @@
         ]
       },
       {
-        "name": "Literasi Numerasi",
+        "name": "Paket Lengkap",
         "schedule": [
           { "dayName": "Senin", "class": ["-", "Tes Opsi 1", "-", "-", "-", "-", "-"] },
+          { "dayName": "Selasa", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Rabu", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Kamis", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Jumat", "class": ["-", "-", "-", "-", "-", "-", "-"] }
+        ]
+      },
+      {
+        "name": "Literasi Numerasi",
+        "schedule": [
+          { "dayName": "Senin", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Selasa", "class": ["-", "Tes Opsi 2", "-", "-", "-", "-", "-"] },
+          { "dayName": "Rabu", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Kamis", "class": ["-", "-", "-", "-", "-", "-", "-"] },
+          { "dayName": "Jumat", "class": ["-", "-", "-", "-", "-", "-", "-"] }
+        ]
+      },
+      {
+        "name": "Kreativitas Motorik",
+        "schedule": [
+          { "dayName": "Senin", "class": ["-", "-", "-", "-", "-", "Tes Opsi 4", "-"] },
           { "dayName": "Selasa", "class": ["-", "-", "-", "-", "-", "-", "-"] },
           { "dayName": "Rabu", "class": ["-", "-", "-", "-", "-", "-", "-"] },
           { "dayName": "Kamis", "class": ["-", "-", "-", "-", "-", "-", "-"] },
