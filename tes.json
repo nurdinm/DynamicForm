@@ -166,7 +166,7 @@
         ]
       },
       {
-        "name": "Literasi Numerasi",
+        "name": "Titerasi Numerasi",
         "schedule": [
           { "dayName": "Senin", "class": ["-", "-", "-", "-", "-", "-", "-"] },
           { "dayName": "Selasa", "class": ["-", "Tes Opsi 2", "-", "-", "-", "-", "-"] },
