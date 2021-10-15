@@ -12,7 +12,7 @@
     "section": "whyLearnInSekolahmuData",
     "title": "Kenapa Harus Belajar UTBK di Sekolah.mu?",
     "subtitle": "Sekolah.mu percaya mempersiapkan kuliah bukan hanya mempersiapkan materi, tetapi  juga tentang pengenalan minat dan bakat diri. Dapatkan rekomendasi mengenai jurusanmu di kelas Siap Kuliah!",
-    "methods": [
+    "recommendationList": [
       {
         "image": "https://cdn.sekolah.mu/assets/detail-year-level/lm_icon_1.svg",
         "name": "Seberapa Jauh Kemampuanmu?",
