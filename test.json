@@ -1,0 +1,211 @@
+[
+  {
+    "section": "descriptionData",
+    "title": "Siap UTBK Siap Kuliah Sesuai Minat! ",
+    "description": "Belajar materi dan kenali diri untuk perkuliahan yang lebih optimal",
+    "packageLink": "https://bayar.sekolah.mu/paket/sekolahmu/trial-gratis-paud?utm_source=sekolahmu&utm_medium=jenjang-paud-headline",
+    "sectionImage": "https://cdn.sekolah.mu/assets/detail-year-level/paud/description_img.png",
+    "sectionBg": "https://cdn.sekolah.mu/assets/detail-year-level/banner_paud.png",
+    "sectionBgMobile": "https://cdn.sekolah.mu/assets/detail-year-level/banner_paud_mobile.png"
+  },
+  {
+    "section": "whyLearnInSekolahmuData",
+    "title": "Kenapa Harus Belajar UTBK di Sekolah.mu?",
+    "subtitle": "Sekolah.mu percaya mempersiapkan kuliah bukan hanya mempersiapkan materi, tetapi  juga tentang pengenalan minat dan bakat diri. Dapatkan rekomendasi mengenai jurusanmu di kelas Siap Kuliah!",
+    "methods": [
+      {
+        "image": "https://cdn.sekolah.mu/assets/detail-year-level/lm_icon_1.svg",
+        "name": "Seberapa Jauh Kemampuanmu?",
+        "list": [
+          "Tes Penalaran Deduktif",
+          "Tes Penalaran Induktif",
+          "Tes Penalaran Angka",
+          "Tes Visualisasi",
+          "Tes Kecepatan dan ketelitian",
+          "Tes Pemahaman Bacaan"
+        ]
+      },
+      {
+        "image": "https://cdn.sekolah.mu/assets/detail-year-level/lm_icon_2.svg",
+        "name": "Kenali Pontensi Dirimu",
+        "list": [
+          "Tes Minat ",
+          "Tes Kepribadian",
+          "Tes Gaya Belajar",
+          "Tes Personal Value"
+        ]
+      },
+      {
+        "image": "https://cdn.sekolah.mu/assets/detail-year-level/lm_icon_3.svg",
+        "name": "Konsultasi Tentang Diri Sendiri",
+        "list": [
+          "Personalized Report (Laporan terpersonalisasi mengenai rekomendasi jurusan berdasarkan Potensi diri)",
+          "Konsultasi dengan Education counselor  tentang personalized report"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "preparationData",
+    "title": "Maksimalkan Potensimu Lewat Kenali Diri dan Belajar Materi!",
+    "subtitle": "Siapkan dirimu lebih dari menghadapi ujian harian di sekolah. Lengkapi persiapan UTBK-mu dengan belajar di Sekolah.mu!",
+    "sectionImage": "https://cdn.sekolah.mu/assets/detail-year-level/paud/package_fav_img.png",
+    "sectionList": [
+      "Pre-test & Post-test",
+      "Belajar konsep fundamental dari video dan infografis",
+      "Latihan soal step by step per bab",
+      "Latihan kumpulan soal UTBK (Higher Order Thinking Skills)",
+      "Try-out Nasional 2022 setiap bulan",
+      "Add-on konsultasi dengan psikolog pendidikan tentang rencana pendidikan, karir, passion, dan kesehatan mental"
+    ],
+    "originalPrice": 1200000,
+    "discountedPrice": 360000,
+    "packageLink": "https://bayar.sekolah.mu/paket/sekolahmu/paket-kelas-paud/kelas-living-quran?utm_source=sekolahmu&utm_medium=jenjang-paud-favorit"
+  },
+  {
+    "section": "bannerData",
+    "title": "Ada yang Menarik dan Spesial Untukmu!"
+  },
+  {
+    "section": "timelineUtbkData",
+    "title": "Menuju UTBK 2022",
+    "subtitle": "Catat tanggal pentingnya, ya! Berikut rangkaian jadwal UTBK ",
+    "sectionImage": "https://cdn.sekolah.mu/assets/detail-year-level/paud/package_fav_img.png",
+    "timelineList": [
+      {
+        "name": "Estimasi Registrasi Akun LTMPT",
+        "date": "Februari-Maret 2022",
+        "image": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "numberImage": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg"
+      },
+      {
+        "name": "Estimasi Pendaftaraan UTBK",
+        "date": "Maret-April 2022",
+        "image": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "numberImage": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg"
+      },
+      {
+        "name": "Estimasi Pelaksanaan UTBK Gelombang 1",
+        "date": "April 2022",
+        "image": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "numberImage": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg"
+      },
+      {
+        "name": "Estimasi Pelaksanaan UTBK Gelombang 2",
+        "date": "April-Mei 2022",
+        "image": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "numberImage": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg"
+      },
+      {
+        "name": "Estimasi Pengumuman Hasil UTBK",
+        "date": "Juni 2022",
+        "image": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "numberImage": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg"
+      }
+    ]
+  },
+  {
+    "section": "tutorData",
+    "title": "Belajar langsung dari Tutor Sekolah.mu",
+    "tutorList": [
+      {
+        "name": "Syauqi Abdurrahman Abrori",
+        "photo": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "title": "Tutor TKPA",
+        "grade": "S1 & S2 Teknik Fisika - ITB",
+        "award": [
+          "Program Kreativitas Mahasiswa (PKM) 2016",
+          "Olimpiade Sains Nasional (OSN) Matematika 2012",
+          "Creativity Enhancement Winner",
+          "Tokyo Tech Innovation Award 2016"
+        ]
+      },
+      {
+        "name": "Cessie Hillia Debora",
+        "photo": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "title": "Tutor Sosiologi",
+        "grade": "Hukum - Undip",
+        "award": [
+          "Program Kreativitas Mahasiswa (PKM) 2016",
+          "Olimpiade Sains Nasional (OSN) Matematika 2012",
+          "Creativity Enhancement Winner",
+          "Tokyo Tech Innovation Award 2016"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "testiData",
+    "title": "Gimana Pengalaman Belajar UTBK di Sekolah.mu?",
+    "testiList": [
+      {
+        "name": "Syauqi Abdurrahman Abrori",
+        "photo": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "major": "Pertambangan",
+        "univ": "Universitas Hasanuddin Makassar",
+        "review": "“Pemahamanku untuk menarik kesimpulan dari materi jadi lebih baik! Cara tutor Sekolah.mu menjelaskan bagus banget.”"
+      },
+      {
+        "name": "Rian Syaputra Ainun Naim",
+        "photo": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "major": "Informatika",
+        "univ": "Universitas Mulawarman",
+        "review": "“Aku dapat banyak panduan dari tutor Sekolah.mu. Pembahasan soalnya jadi lebih mudah buat dipahami.”"
+      },
+      {
+        "name": "Rizky Akmal Darmawan",
+        "photo": "https://cdn.sekolah.mu/upload/6ceda43ae5574acda48bc25550e5b232.jpg",
+        "major": "Teknik Sipil",
+        "univ": "Universitas Bangka Belitung",
+        "review": "“Kelas nya bagus, kakak kakaknya juga baik baik, bisa belajar di manapun dan kapanpun”"
+      }
+    ]
+  },
+  {
+    "section": "faqData",
+    "title": "FAQ (Tanya Jawab)",
+    "sectionImage": "https://cdn.sekolah.mu/assets/detail-year-level/paud/faq_img.png",
+    "questions": [
+      {
+        "question": "Berapa lama durasi paket kelas akan berjalan?",
+        "answer": "Durasi keseluruhan kelas dari tiap paket adalah 3 bulan dan 6 bulan, tergantung paket yang dibeli.",
+        "key": "_1"
+      },
+      {
+        "question": "Apa saja opsi metode pembayaran yang tersedia?",
+        "answer": "Terdapat 2 opsi metode pembayaran yakni pembayaran penuh dan cicilan. <br> <br> Metode cicilan dibagi menjadi 3 kali pembayaran: pembayaran di awal sebelum ikut kelas, pembayaran pada bulan kedua, dan pembayaran pada bulan ketiga. Pembayaran kedua dan ketiga jatuh tempo tanggal 10 pada bulan berikutnya setelah cicilan sebelumnya dibayar. ",
+        "key": "_2"
+      },
+      {
+        "question": "Apa media yang digunakan saat Belajar Live? Kapan saja jadwal Belajar Live diadakan?",
+        "answer": "Belajar Live akan menggunakan aplikasi Zoom dan memungkinkan adanya interaksi antara 2 arah dengan fasilitator dan anak-anak lainnya. Jadwal Belajar Live berbeda-beda sesuai dengan jenjang dan paket yang dimiliki.",
+        "key": "_3"
+      },
+      {
+        "question": "Apa perbedaan paket kelas Literasi Numerasi dan Kreativitas Motorik?",
+        "answer": "Paket kelas Literasi dan Numerasi ditujukan untuk mengasah kemampuan anak dalam membaca, menulis dan berhitung. Sedangkan paket kelas Kreativitas Motorik ditujukan untuk meningkatkan kreativitas dan menstimulasi keterampilan motorik anak.",
+        "key": "_4"
+      },
+      {
+        "question": "Saya sudah coba daftar, tapi tidak bisa. Apa yang harus saya lakukan?",
+        "answer": "Pastikan umur di akun terdaftar sudah sesuai dengan kategori jenjang/usia kelas yang dipilih.",
+        "key": "_5"
+      },
+      {
+        "question": "Anak saya sudah TK, tapi yang ada hanya jenjang PAUD. Apa yang harus saya lakukan?",
+        "answer": "PAUD adalah jenjang yang mencakup KB dan TK. Secara umum, jenjang usia anak PAUD dibagi menjadi PAUD KB 3-4 tahun, PAUD A 4-5 tahun, dan PAUD B 5-6 tahun.",
+        "key": "_6"
+      },
+      {
+        "question": "Apakah harga paket kelas sudah termasuk dengan playkit?",
+        "answer": "Harga paket kelas belum termasuk playkit dan untuk saat ini belum ada paket kelas yang menyediakan playkit. Apabila ada alat bahan yang diperlukan untuk praktik pembelajaran, nantinya akan diinformasikan di aktivitas kelas dan dapat disediakan secara mandiri dengan alat-alat yang ada di rumah.",
+        "key": "_7"
+      },
+      {
+        "question": "Bagaimana jika saya ingin tahu lebih banyak tentang Paket Kelas Sekolah.mu?",
+        "answer": "Untuk info lebih lanjut, Ayah Bunda dapat menghubungi layanan pelanggan Sekolah.mu di nomor +6281388111756 atau klik <a href=\"https://wa.me/6281388111756?text=Halo! Saya ingin tahu lebih lanjut tentang Sekolah.mu\" target=\"_blank\">di sini</a>",
+        "key": "_8"
+      }
+    ]
+  }
+]
